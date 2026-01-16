@@ -19,7 +19,7 @@ class AuthService
 {
     /**
      * @param SendCodeData $data
-     * @return string[]
+     * @return array
      */
     public function sendCode(SendCodeData $data): array
     {
@@ -41,7 +41,7 @@ class AuthService
                 'email' => $data->email,
                 'error' => $t->getMessage(),
             ]);
-
+            //TODO тут можна попрацювати над флоу помилок якщо треба додам
             abort(500, $t->getMessage());
         }
 
@@ -77,7 +77,7 @@ class AuthService
                 'email' => $data->email,
                 'error' => $t->getMessage(),
             ]);
-
+            //TODO тут можна попрацювати над флоу помилок якщо треба додам
             abort(500, $t->getMessage());
         }
 

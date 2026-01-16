@@ -25,7 +25,7 @@ class BookingFactory extends Factory
     {
         $day = $this->faker->dateTimeBetween('+1 days', '+14 days');
         $hour = $this->faker->numberBetween(9, 18);
-        $start = (clone $day)->setTime($hour, 0, 0);
+        $start = (clone $day)->setTime($hour, 0);
         $end = (clone $start)->modify('+' . rand(1, 4) . ' hours');
 
         return [

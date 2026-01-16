@@ -35,5 +35,10 @@ class AppServiceProvider extends ServiceProvider
         RateLimiter::for('login', function (Request $request) {
             return Limit::perMinutes(5, 5)->by($request->input('email'));
         });
+
+        // Обмеження на бронювання кімнат (10 разів на хвилину з однієї IP)
+        RateLimiter::for('room-booking.book', function (Request $request) {
+            return Limit::perMinute(10)->by($request->ip());
+        });
     }
 }

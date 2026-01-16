@@ -13,7 +13,6 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Carbon;
 
-#[UseFactory(RoomFactory::class)]
 /**
  * @property int $id
  * @property string $name

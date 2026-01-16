@@ -3,16 +3,12 @@
 namespace App\Modules\Auth\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Models\User;
 use App\Modules\Auth\DTO\LoginWithCodeData;
 use App\Modules\Auth\DTO\SendCodeData;
 use App\Modules\Auth\Services\AuthService;
-use Carbon\Carbon;
 use Exception;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Mail;
 
 class AuthController extends Controller
 {
