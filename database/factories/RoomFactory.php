@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Models\Room;
+use App\Modules\RoomBooking\Models\Room;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**

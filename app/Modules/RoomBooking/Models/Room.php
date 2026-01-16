@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Models;
+namespace App\Modules\RoomBooking\Models;
 
 use Database\Factories\RoomFactory;
 use Eloquent;
 use Illuminate\Database\Eloquent\Attributes\UseFactory;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -23,7 +24,7 @@ use Illuminate\Support\Carbon;
  * @property Carbon|null $updated_at
  * @property-read Collection<int, Booking> $bookings
  * @property-read int|null $bookings_count
- * @method static \Database\Factories\RoomFactory factory($count = null, $state = [])
+ * @method static RoomFactory factory($count = null, $state = [])
  * @method static Builder<static>|Room newModelQuery()
  * @method static Builder<static>|Room newQuery()
  * @method static Builder<static>|Room query()
@@ -39,6 +40,11 @@ use Illuminate\Support\Carbon;
 class Room extends Model
 {
     use HasFactory;
+
+    protected static function newFactory(): RoomFactory|Factory
+    {
+        return RoomFactory::new();
+    }
 
     protected $guarded = ['id'];
 

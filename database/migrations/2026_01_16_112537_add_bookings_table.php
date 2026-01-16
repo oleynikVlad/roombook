@@ -16,6 +16,8 @@ return new class extends Migration {
             $table->foreignId('room_id')->constrained();
             $table->dateTime('start_time');
             $table->dateTime('end_time');
+            $table->timestamps();
+
             $table->index(['room_id', 'start_time', 'end_time']);
         });
     }

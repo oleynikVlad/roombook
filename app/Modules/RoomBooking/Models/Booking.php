@@ -1,10 +1,12 @@
 <?php
 
-namespace App\Models;
+namespace App\Modules\RoomBooking\Models;
 
+use App\Models\User;
 use Database\Factories\BookingFactory;
 use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -32,12 +34,18 @@ use Illuminate\Support\Carbon;
 class Booking extends Model
 {
     use HasFactory;
+
     protected $guarded = ['id'];
 
     protected $casts = [
         'start_time' => 'datetime',
         'end_time' => 'datetime',
     ];
+
+    protected static function newFactory(): BookingFactory|Factory
+    {
+        return BookingFactory::new();
+    }
 
     /**
      * @return BelongsTo

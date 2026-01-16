@@ -4,6 +4,7 @@ namespace App\Models;
 
 // use Illuminate\Contracts\AuthController\MustVerifyEmail;
 use App\Modules\Auth\Models\PersonalAccessToken;
+use App\Modules\RoomBooking\Models\Booking;
 use Database\Factories\UserFactory;
 use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
